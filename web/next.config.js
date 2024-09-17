@@ -10,6 +10,7 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
   output: "standalone",
+  basePath: '/apps',
   async headers() {
     return [
       {
