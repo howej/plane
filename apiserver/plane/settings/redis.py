@@ -15,6 +15,6 @@ def redis_instance():
             ssl_cert_reqs=None,
         )
     else:
-        ri = redis.Redis.from_url(settings.REDIS_URL, db=0)
+        ri = redis.Redis.from_url(settings.REDIS_URL, db=20)
 
     return ri
