@@ -36,7 +36,7 @@ environment=PORT=3003,HOSTNAME=0.0.0.0
 
 [program:migrator]
 directory=/app/api
-command=sh -c "./bin/docker-entrypoint-migrator.sh"
+command=sh ./bin/docker-entrypoint-migrator.sh
 autostart=true
 autorestart=false
 stdout_logfile=/dev/stdout
@@ -46,7 +46,7 @@ stderr_logfile_maxbytes=0
 
 [program:api]
 directory=/app/api
-command=sh -c "./bin/docker-entrypoint-api.sh"
+command=sh ./bin/docker-entrypoint-api.sh
 autostart=true
 autorestart=true
 stdout_logfile=/dev/stdout
@@ -56,7 +56,7 @@ stderr_logfile_maxbytes=0
 
 [program:worker]
 directory=/app/api
-command=sh -c "./bin/docker-entrypoint-worker.sh"
+command=sh ./bin/docker-entrypoint-worker.sh
 autostart=true
 autorestart=true
 stdout_logfile=/dev/stdout
@@ -66,7 +66,7 @@ stderr_logfile_maxbytes=0
 
 [program:beat]
 directory=/app/api
-command=sh -c "./bin/docker-entrypoint-beat.sh"
+command=sh ./bin/docker-entrypoint-beat.sh
 autostart=true
 autorestart=true
 stdout_logfile=/dev/stdout
