@@ -28,6 +28,7 @@ WORKDIR /app
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 # COPY --from=builder /app/out/yarn.lock ./yarn.lock
+# RUN yarn cache clean
 RUN yarn install
 
 COPY --from=builder /app/out/full/ .
@@ -71,7 +72,7 @@ RUN apk add --no-cache \
     ncurses-libs ncurses-terminfo xz tk-dev libffi-dev \
     xz-dev supervisor html2text vim openssh-client \
     sudo lsof net-tools postgresql-dev procps gettext
-    
+
 RUN apk add --no-cache nodejs npm
 
 RUN python -m pip install --upgrade pip
